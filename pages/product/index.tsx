@@ -107,7 +107,7 @@ export default function ProductPage() {
             <div
               key={product.id}
               onClick={() => openModal(product)}
-              className="group relative overflow-hidden rounded-lg cursor-pointer bg-transparent h-[400px] md:h-[500px] w-full transform-gpu transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
+              className="group relative overflow-hidden rounded-lg cursor-pointer border border-gray-200 p-6 transition-all hover:border-blue-500 hover:shadow-lg"
               style={{ backfaceVisibility: 'hidden' }}
             >
               <div
@@ -117,7 +117,7 @@ export default function ProductPage() {
                 }}
               />
 
-              <div className="relative h-full flex flex-col justify-between p-4 md:p-6 text-white">
+              <div className="relative h-full flex flex-col justify-between text-white">
                 <div>
                   <div className="flex gap-2 mb-3">
                     {product.tags.map((tag) => (
@@ -173,7 +173,7 @@ export default function ProductPage() {
             <div
               key={experiment.id}
               onClick={() => openModal(experiment)}
-              className="group relative overflow-hidden rounded-lg cursor-pointer bg-transparent h-[350px] md:h-[400px] w-full transform-gpu transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
+              className="group relative overflow-hidden rounded-lg cursor-pointer border border-gray-200 p-6 transition-all hover:border-blue-500 hover:shadow-lg"
               style={{ backfaceVisibility: 'hidden' }}
             >
               <div
@@ -183,7 +183,7 @@ export default function ProductPage() {
                 }}
               />
 
-              <div className="relative h-full flex flex-col justify-between p-4 md:p-6 text-white">
+              <div className="relative h-full flex flex-col justify-between text-white">
                 <div>
                   <div className="flex gap-2 mb-3">
                     {experiment.tags.map((tag) => (
