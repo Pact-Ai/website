@@ -1,0 +1,16 @@
+# Global owners
+* @website-team
+
+<!-- # Documentation
+/docs/ @doc-team
+*.md @doc-team
+
+# GitHub workflows
+/.github/workflows/ @devops-team
+
+# Tests
+/tests/ @qa-team
+
+# Configuration files
+*.yml @admin
+*.yaml @admin -->
