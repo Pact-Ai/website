@@ -8,7 +8,6 @@ import { title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
 import { siteConfig } from "@/config/site";
 
-
 const products = [
   {
     id: 11,
@@ -104,22 +103,26 @@ export default function ProductPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((product) => (
-            <div
+            <button
               key={product.id}
               onClick={() => openModal(product)}
-              className="group relative overflow-hidden rounded-lg cursor-pointer border border-gray-200 p-6 transition-all hover:border-blue-500 hover:shadow-lg"
-              style={{ backfaceVisibility: 'hidden' }}
+              className="group relative overflow-hidden rounded-lg cursor-pointer border border-gray-200 p-6 transition-all hover:border-blue-500 hover:shadow-lg text-left w-full"
+              style={{ backfaceVisibility: "hidden" }}
+              type="button"
             >
+              {/* Card background with same image */}
               <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                className="absolute inset-0 bg-cover bg-center"
                 style={{
-                  backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('${product.image}')`,
+                  backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8)), url('${product.image}')`,
                 }}
               />
-
-              <div className="relative h-full flex flex-col justify-between text-white">
-                <div>
-                  <div className="flex gap-2 mb-3">
+              
+              {/* Content overlay */}
+              <div className="relative text-white">
+                {/* Header section with same card styling */}
+                <div className="p-6 md:p-8">
+                  <div className="flex gap-2 mb-4 flex-wrap">
                     {product.tags.map((tag) => (
                       <Chip
                         key={tag}
@@ -131,31 +134,49 @@ export default function ProductPage() {
                       </Chip>
                     ))}
                   </div>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-3">{product.name}</h2>
+                  <p className="text-base md:text-lg text-white/90 mb-6">{product.shortDesc}</p>
                 </div>
 
-                <div>
-                  <h3 className="text-xl md:text-2xl font-semibold mb-2">
-                    {product.name}
-                  </h3>
-                  <p className="text-xs md:text-sm text-white/90 mb-2">
-                    {product.shortDesc}
-                  </p>
-                  
-                  {/* Hover preview */}
-                  <div className="transition-all duration-300 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-20 overflow-hidden">
-                    <p className="text-xs md:text-sm text-white/80 line-clamp-2">
-                      {product.fullDesc}
-                    </p>
-                    <span className="text-xs md:text-sm text-white/90 font-medium mt-1 inline-block">... see more</span>
+                {/* Scrollable content area */}
+                <div className="px-6 md:px-8 pb-6 max-h-[80vh] overflow-y-auto">
+                  <div className="text-sm md:text-base text-white/90 leading-relaxed mb-4">
+                    {product.fullDesc.split('\n\n').map((paragraph, index) => (
+                      <p key={index} className={index > 0 ? 'mt-4' : ''}>
+                        {paragraph}
+                      </p>
+                    ))}
                   </div>
+                  {product.photoCredit && (
+                    <p className="text-xs text-white/60 italic">
+                      {product.photoCredit}
+                    </p>
+                  )}
+                </div>
+
+                {/* Footer with buttons */}
+                <div className="p-6 md:p-8 pt-4 flex gap-3 justify-end border-t border-white/10">
+                  <Button 
+                    color="default" 
+                    variant="light" 
+                    onPress={closeModal}
+                    className="text-white hover:bg-white/10"
+                  >
+                    Close
+                  </Button>
+                  {product.link && (
+                    <Button 
+                      as={Link}
+                      href={product.link}
+                      isExternal
+                      className="bg-white/20 hover:bg-white/30 text-white border border-white/30"
+                    >
+                      View Project
+                    </Button>
+                  )}
                 </div>
               </div>
-
-              {/* Photo Credit */}
-              <div className="absolute top-2 right-2 bg-black/40 backdrop-blur-sm px-2 py-1 rounded text-white/70 text-[10px] md:text-xs">
-                {product.photoCredit}
-              </div>
-            </div>
+            </button>
           ))}
         </div>
 
@@ -170,22 +191,26 @@ export default function ProductPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {experiments.map((experiment) => (
-            <div
+            <button
               key={experiment.id}
               onClick={() => openModal(experiment)}
-              className="group relative overflow-hidden rounded-lg cursor-pointer border border-gray-200 p-6 transition-all hover:border-blue-500 hover:shadow-lg"
-              style={{ backfaceVisibility: 'hidden' }}
+              className="group relative overflow-hidden rounded-lg cursor-pointer border border-gray-200 p-6 transition-all hover:border-blue-500 hover:shadow-lg text-left w-full"
+              style={{ backfaceVisibility: "hidden" }}
+              type="button"
             >
+              {/* Card background with same image */}
               <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                className="absolute inset-0 bg-cover bg-center"
                 style={{
-                  backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('${experiment.image}')`,
+                  backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8)), url('${experiment.image}')`,
                 }}
               />
-
-              <div className="relative h-full flex flex-col justify-between text-white">
-                <div>
-                  <div className="flex gap-2 mb-3">
+              
+              {/* Content overlay */}
+              <div className="relative text-white">
+                {/* Header section with same card styling */}
+                <div className="p-6 md:p-8">
+                  <div className="flex gap-2 mb-4 flex-wrap">
                     {experiment.tags.map((tag) => (
                       <Chip
                         key={tag}
@@ -197,31 +222,49 @@ export default function ProductPage() {
                       </Chip>
                     ))}
                   </div>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-3">{experiment.name}</h2>
+                  <p className="text-base md:text-lg text-white/90 mb-6">{experiment.shortDesc}</p>
                 </div>
 
-                <div>
-                  <h3 className="text-xl md:text-2xl font-semibold mb-2">
-                    {experiment.name}
-                  </h3>
-                  <p className="text-xs md:text-sm text-white/90 mb-2">
-                    {experiment.shortDesc}
-                  </p>
-                  
-                  {/* Hover preview */}
-                  <div className="transition-all duration-300 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-20 overflow-hidden">
-                    <p className="text-xs md:text-sm text-white/80 line-clamp-2">
-                      {experiment.fullDesc}
-                    </p>
-                    <span className="text-xs md:text-sm text-white/90 font-medium mt-1 inline-block">... see more</span>
+                {/* Scrollable content area */}
+                <div className="px-6 md:px-8 pb-6 max-h-[80vh] overflow-y-auto">
+                  <div className="text-sm md:text-base text-white/90 leading-relaxed mb-4">
+                    {experiment.fullDesc.split('\n\n').map((paragraph, index) => (
+                      <p key={index} className={index > 0 ? 'mt-4' : ''}>
+                        {paragraph}
+                      </p>
+                    ))}
                   </div>
+                  {experiment.photoCredit && (
+                    <p className="text-xs text-white/60 italic">
+                      {experiment.photoCredit}
+                    </p>
+                  )}
+                </div>
+
+                {/* Footer with buttons */}
+                <div className="p-6 md:p-8 pt-4 flex gap-3 justify-end border-t border-white/10">
+                  <Button 
+                    color="default" 
+                    variant="light" 
+                    onPress={closeModal}
+                    className="text-white hover:bg-white/10"
+                  >
+                    Close
+                  </Button>
+                  {experiment.link && (
+                    <Button 
+                      as={Link}
+                      href={experiment.link}
+                      isExternal
+                      className="bg-white/20 hover:bg-white/30 text-white border border-white/30"
+                    >
+                      View Project
+                    </Button>
+                  )}
                 </div>
               </div>
-
-              {/* Photo Credit */}
-              <div className="absolute top-2 right-2 bg-black/40 backdrop-blur-sm px-2 py-1 rounded text-white/70 text-[10px] md:text-xs">
-                {experiment.photoCredit}
-              </div>
-            </div>
+            </button>
           ))}
         </div>
 
