@@ -5,6 +5,12 @@
 @source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
 
 @theme {
-    --font-sans: "font", sans-serif;
-    --font-mono: "monospace", monospace;
+    --font-sans: "Inter", sans-serif;
+    --font-mono: "Fira Code", monospace;
+}
+
+/* Subtle dot-grid background for a techy feel */
+body {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 24px 24px;
 }

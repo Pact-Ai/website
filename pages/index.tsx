@@ -7,7 +7,6 @@ import DefaultLayout from "@/layouts/default";
 import RotatingText from "@/components/RotatingText";
 
 
-
 export default function IndexPage() {
   const [showArrow, setShowArrow] = useState(true);
 
@@ -30,23 +29,25 @@ export default function IndexPage() {
   }, []);
 
   return (
-    
+
     <DefaultLayout>
       <section
         id="hero"
-        className="relative flex items-center justify-center"
+        className="relative flex items-center justify-center overflow-hidden"
         style={{ height: 'calc(100vh - 64px)' }}
       >
-        <div className="max-w-4xl text-center relative z-10">
+
+
+        <div className="max-w-4xl text-center relative z-10 px-4">
           <h1 className={title({ size: "lg", class: "mb-4" })}>
             Building AI Systems&#160;
           </h1>
-      
+
           <h1 className={title({ size: "lg", class: "mb-6 inline-flex items-center justify-center gap-2 flex-nowrap" })}>
             <span>That&#160;</span>
             <span className="inline-block w-[150px] text-left">
               <RotatingText
-                texts={['Help', 'Matters', 'Lorem']}
+                texts={['Help', 'Matter', 'Scale']}
                 mainClassName="text-primary inline-block"
                 staggerFrom="last"
                 initial={{ y: "100%" }}
@@ -59,6 +60,10 @@ export default function IndexPage() {
               />
             </span>
           </h1>
+
+          <p className="mt-6 text-default-500 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+            Pioneering NLP, Computer Vision & low-resource language solutions — from research to production.
+          </p>
         </div>
 
         {showArrow && (
@@ -84,6 +89,9 @@ export default function IndexPage() {
         )}
       </section>
 
+      {/* Gradient separator */}
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+
       <section
         className="relative flex flex-col items-center justify-center gap-8 z-10"
         id="content"
@@ -106,10 +114,10 @@ export default function IndexPage() {
           >
             Explore Products
           </Button>
-          <Button 
-            as={NextLink} 
-            href="/about" 
-            size="lg" 
+          <Button
+            as={NextLink}
+            href="/about"
+            size="lg"
             variant="bordered"
             className="hover:border-primary transition-colors"
           >
