@@ -214,14 +214,14 @@ export const ChevronLeftIcon: React.FC<IconSvgProps> = ({
 }) => {
   return (
     <svg
-      height={size || height}
-      viewBox="0 0 24 24"
-      width={size || width}
       fill="none"
+      height={size || height}
       stroke="currentColor"
-      strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+      width={size || width}
       {...props}
     >
       <path d="M15 18l-6-6 6-6" />
@@ -237,17 +237,40 @@ export const ChevronRightIcon: React.FC<IconSvgProps> = ({
 }) => {
   return (
     <svg
-      height={size || height}
-      viewBox="0 0 24 24"
-      width={size || width}
       fill="none"
+      height={size || height}
       stroke="currentColor"
-      strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+      width={size || width}
       {...props}
     >
       <path d="M9 18l6-6-6-6" />
+    </svg>
+  );
+};
+
+export const ChevronDownIcon: React.FC<IconSvgProps> = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}) => {
+  return (
+    <svg
+      fill="none"
+      height={size || height}
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+      width={size || width}
+      {...props}
+    >
+      <path d="M6 9l6 6 6-6" />
     </svg>
   );
 };

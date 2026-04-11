@@ -47,7 +47,7 @@ export default function DefaultLayout({
                 href={siteConfig.links.huggingface}
                 title="HuggingFace"
               >
-                <img src="/hf-logo.svg" alt="HuggingFace" className="w-4 h-4" />
+                <img alt="HuggingFace" className="w-4 h-4" src="/hf-logo.svg" />
                 <span className="text-sm">HuggingFace</span>
               </Link>
             </div>

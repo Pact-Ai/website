@@ -6,7 +6,6 @@ import { title, subtitle } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
 import RotatingText from "@/components/RotatingText";
 
-
 export default function IndexPage() {
   const [showArrow, setShowArrow] = useState(true);
 
@@ -17,60 +16,67 @@ export default function IndexPage() {
   useEffect(() => {
     const handleScroll = () => {
       const heroSection = document.getElementById("hero");
+
       if (heroSection) {
         const heroBottom = heroSection.offsetHeight;
         const scrolled = window.scrollY;
+
         setShowArrow(scrolled < heroBottom - 200);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-
     <DefaultLayout>
       <section
-        id="hero"
         className="relative flex items-center justify-center overflow-hidden"
-        style={{ height: 'calc(100vh - 64px)' }}
+        id="hero"
+        style={{ height: "calc(100vh - 64px)" }}
       >
-
-
         <div className="max-w-4xl text-center relative z-10 px-4">
           <h1 className={title({ size: "lg", class: "mb-4" })}>
             Building AI Systems&#160;
           </h1>
 
-          <h1 className={title({ size: "lg", class: "mb-6 inline-flex items-center justify-center gap-2 flex-nowrap" })}>
+          <h1
+            className={title({
+              size: "lg",
+              class:
+                "mb-6 inline-flex items-center justify-center gap-2 flex-nowrap",
+            })}
+          >
             <span>That&#160;</span>
             <span className="inline-block w-[150px] text-left">
               <RotatingText
-                texts={['Help', 'Matter', 'Scale']}
-                mainClassName="text-primary inline-block"
-                staggerFrom="last"
-                initial={{ y: "100%" }}
                 animate={{ y: 0 }}
                 exit={{ y: "-120%" }}
-                staggerDuration={0.025}
-                splitLevelClassName="overflow-hidden"
-                transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                initial={{ y: "100%" }}
+                mainClassName="text-primary inline-block"
                 rotationInterval={3500}
+                splitLevelClassName="overflow-hidden"
+                staggerDuration={0.025}
+                staggerFrom="last"
+                texts={["Help", "Matter", "Scale"]}
+                transition={{ type: "spring", damping: 30, stiffness: 400 }}
               />
             </span>
           </h1>
 
           <p className="mt-6 text-default-500 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-            Pioneering NLP, Computer Vision & low-resource language solutions — from research to production.
+            Pioneering NLP, Computer Vision & low-resource language solutions —
+            from research to production.
           </p>
         </div>
 
         {showArrow && (
           <button
+            aria-label="Scroll to content"
             className="absolute bottom-12 animate-bounce cursor-pointer border-none bg-transparent transition-opacity duration-300 z-10"
             onClick={scrollToContent}
-            aria-label="Scroll to content"
           >
             <svg
               className="w-8 h-8 text-primary"
@@ -95,7 +101,7 @@ export default function IndexPage() {
       <section
         className="relative flex flex-col items-center justify-center gap-8 z-10"
         id="content"
-        style={{ height: 'calc(100vh - 64px)' }}
+        style={{ height: "calc(100vh - 64px)" }}
       >
         <div className="max-w-4xl text-center">
           <p className={subtitle({ class: "mx-auto max-w-2xl" })}>
@@ -116,10 +122,10 @@ export default function IndexPage() {
           </Button>
           <Button
             as={NextLink}
+            className="hover:border-primary transition-colors"
             href="/about"
             size="lg"
             variant="bordered"
-            className="hover:border-primary transition-colors"
           >
             Learn More
           </Button>

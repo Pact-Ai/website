@@ -11,7 +11,7 @@ import { siteConfig } from "@/config/site";
 const products = [
   {
     id: 11,
-    name: "PageStudio",
+    name: "NoteStudio",
     shortDesc: "AI platform for education",
     fullDesc:
       "Knowledge made simple.\n\nStudy, Understand, and create a tailored experience without breaking the bank. " +
