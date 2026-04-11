@@ -113,15 +113,6 @@ export default function IndexPage() {
         <div className="flex gap-4 mt-4">
           <Button
             as={NextLink}
-            color="primary"
-            href="/product"
-            size="lg"
-            variant="solid"
-          >
-            Explore Products
-          </Button>
-          <Button
-            as={NextLink}
             className="hover:border-primary transition-colors"
             href="/about"
             size="lg"

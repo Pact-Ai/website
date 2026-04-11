@@ -106,7 +106,6 @@ export const Navbar = () => {
                           className="transition-colors hover:bg-white/5 active:bg-white/10"
                           description="AI platform for education. Study, understand, and create."
                           href="https://pagestudio1.framer.website/"
-                          target="_blank"
                           rel="noopener noreferrer"
                           startContent={
                             <img
@@ -115,6 +114,7 @@ export const Navbar = () => {
                               src="/pagestudio_pic.jpg"
                             />
                           }
+                          target="_blank"
                         >
                           <span className="font-bold text-base mb-1 block">
                             NoteStudio
@@ -125,7 +125,6 @@ export const Navbar = () => {
                           className="transition-colors hover:bg-white/5 active:bg-white/10"
                           description="Language translation API. Affordable service for developers."
                           href="#"
-                          target="_blank"
                           rel="noopener noreferrer"
                           startContent={
                             <img
@@ -134,6 +133,7 @@ export const Navbar = () => {
                               src="/jerome.jpg"
                             />
                           }
+                          target="_blank"
                         >
                           <span className="font-bold text-base mb-1 block">
                             The Jerome API
@@ -144,7 +144,6 @@ export const Navbar = () => {
                           className="transition-colors hover:bg-white/5 active:bg-white/10"
                           description="NLP for low-resource languages. T5 Igbo-English."
                           href="https://huggingface.co/Pact-Ai/t5-small_igbo-en"
-                          target="_blank"
                           rel="noopener noreferrer"
                           startContent={
                             <img
@@ -153,6 +152,7 @@ export const Navbar = () => {
                               src="/t5_igbo.png"
                             />
                           }
+                          target="_blank"
                         >
                           <span className="font-bold text-base mb-1 block">
                             T5 Igbo-English
@@ -202,8 +202,8 @@ export const Navbar = () => {
                         "w-full pl-3 font-medium",
                       )}
                       href="https://pagestudio1.framer.website/"
-                      target="_blank"
                       rel="noopener noreferrer"
+                      target="_blank"
                     >
                       NoteStudio
                     </NextLink>
@@ -213,8 +213,8 @@ export const Navbar = () => {
                         "w-full pl-3 font-medium",
                       )}
                       href="#"
-                      target="_blank"
                       rel="noopener noreferrer"
+                      target="_blank"
                     >
                       The Jerome API
                     </NextLink>
@@ -224,8 +224,8 @@ export const Navbar = () => {
                         "w-full pl-3 font-medium",
                       )}
                       href="https://huggingface.co/Pact-Ai/t5-small_igbo-en"
-                      target="_blank"
                       rel="noopener noreferrer"
+                      target="_blank"
                     >
                       T5 Igbo-English
                     </NextLink>
@@ -240,7 +240,7 @@ export const Navbar = () => {
                     className={clsx(
                       linkStyles({ color: "foreground" }),
                       "w-full",
-                      "size-lg",
+                      "text-lg",
                     )}
                     href={item.href}
                   >
