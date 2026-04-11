@@ -8,7 +8,9 @@ export default function BlogPage() {
         <div className="inline-block max-w-lg text-center justify-center">
           <h1 className={title({ color: "violet" })}>Blog</h1>
           <br />
-          <h2 className="text-2xl mt-4 font-semibold text-default-600">Coming Soon</h2>
+          <h2 className="text-2xl mt-4 font-semibold text-default-600">
+            Coming Soon
+          </h2>
           <p className="mt-4 text-default-500">
             We are working on some interesting articles and updates. Stay tuned!
           </p>
