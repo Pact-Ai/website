@@ -85,13 +85,12 @@ export default function DefaultLayout({
                 <span className="text-sm text-default-500 cursor-default">
                   The Jerome API
                 </span>
-                <Link
-                  isExternal
+                <NextLink
                   className="text-sm text-default-500 hover:text-foreground transition-colors w-fit"
-                  href={`${siteConfig.links.huggingface}/t5-small_igbo-en`}
+                  href="/experiments"
                 >
-                  T5 Igbo-English
-                </Link>
+                  Playground
+                </NextLink>
               </div>
             </div>
 
