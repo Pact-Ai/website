@@ -3,7 +3,8 @@ export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
   name: "Pact-Ai",
   organization: "Pact-Ai",
-  description: "Building AI products and systems that help. Specializing in NLP, Computer Vision, and low-resource languages.",
+  description:
+    "Building AI products and systems that help. Specializing in NLP, Computer Vision, and low-resource languages.",
   navItems: [
     {
       label: "Home",
@@ -16,6 +17,10 @@ export const siteConfig = {
     {
       label: "About",
       href: "/about",
+    },
+    {
+      label: "Blog",
+      href: "/blog",
     },
   ],
   navMenuItems: [
@@ -30,6 +35,10 @@ export const siteConfig = {
     {
       label: "About",
       href: "/about",
+    },
+    {
+      label: "Blog",
+      href: "/blog",
     },
   ],
   links: {

@@ -44,10 +44,10 @@ export default function RotatingText({
       <AnimatePresence mode="wait">
         <motion.span
           key={index}
-          className="inline-flex"
-          initial="initial"
           animate="animate"
+          className="inline-flex"
           exit="exit"
+          initial="initial"
         >
           {letters.map((letter, i) => {
             const delay =
@@ -59,14 +59,14 @@ export default function RotatingText({
               <span key={i} className={splitLevelClassName}>
                 <motion.span
                   className="inline-block"
+                  transition={{
+                    ...transition,
+                    delay,
+                  }}
                   variants={{
                     initial: initial,
                     animate: animate,
                     exit: exit,
-                  }}
-                  transition={{
-                    ...transition,
-                    delay,
                   }}
                 >
                   {letter === " " ? "\u00A0" : letter}
