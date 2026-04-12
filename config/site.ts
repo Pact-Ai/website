@@ -7,10 +7,6 @@ export const siteConfig = {
     "Building AI products and systems that help. Specializing in NLP, Computer Vision, and low-resource languages.",
   navItems: [
     {
-      label: "Home",
-      href: "/",
-    },
-    {
       label: "Product",
       href: "/product",
     },
@@ -24,10 +20,6 @@ export const siteConfig = {
     },
   ],
   navMenuItems: [
-    {
-      label: "Home",
-      href: "/",
-    },
     {
       label: "Product",
       href: "/product",

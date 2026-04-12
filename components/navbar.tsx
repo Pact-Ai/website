@@ -140,22 +140,20 @@ export const Navbar = () => {
                           </span>
                         </DropdownItem>
                         <DropdownItem
-                          key="t5"
+                          key="playground"
                           className="transition-colors hover:bg-white/5 active:bg-white/10"
-                          description="NLP for low-resource languages. T5 Igbo-English."
-                          href="https://huggingface.co/Pact-Ai/t5-small_igbo-en"
-                          rel="noopener noreferrer"
+                          description="A machine learning research space"
+                          href="/experiments"
                           startContent={
                             <img
-                              alt="T5"
+                              alt="Playground"
                               className="w-16 h-16 rounded-md object-cover border border-white/10"
                               src="/t5_igbo.png"
                             />
                           }
-                          target="_blank"
                         >
                           <span className="font-bold text-base mb-1 block">
-                            T5 Igbo-English
+                            Playground
                           </span>
                         </DropdownItem>
                       </DropdownMenu>
@@ -223,11 +221,9 @@ export const Navbar = () => {
                         linkStyles({ color: "foreground" }),
                         "w-full pl-3 font-medium",
                       )}
-                      href="https://huggingface.co/Pact-Ai/t5-small_igbo-en"
-                      rel="noopener noreferrer"
-                      target="_blank"
+                      href="/experiments"
                     >
-                      T5 Igbo-English
+                      Playground
                     </NextLink>
                     <div className="w-full h-px bg-white/10 my-1" />
                   </div>
