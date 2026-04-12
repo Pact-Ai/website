@@ -81,7 +81,6 @@ export default function ExperimentsPage() {
                   as={NextLink}
                   className="w-full font-medium"
                   href={exp.link}
-                  isExternal={exp.link.startsWith("http")}
                   rel={exp.link.startsWith("http") ? "noopener noreferrer" : undefined}
                   size="sm"
                   target={exp.link.startsWith("http") ? "_blank" : undefined}
