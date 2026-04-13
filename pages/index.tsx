@@ -35,19 +35,32 @@ export default function IndexPage() {
       <section
         className="relative flex items-center justify-center overflow-hidden"
         id="hero"
-        style={{ height: "calc(100vh - 64px)" }}
+        style={{
+          height: "calc(100vh - 64px)",
+          width: "100vw",
+          position: "relative",
+          left: "50%",
+          right: "50%",
+          marginLeft: "-50vw",
+          marginRight: "-50vw",
+        }}
       >
+        {/* Ultra-minimalist abstract accent at the bottom of the hero */}
+        <div
+          className="absolute inset-0 bg-no-repeat opacity-70"
+          style={{
+            backgroundImage: "url('/hero-accent-minimal.png')",
+            backgroundSize: "100% auto",
+            backgroundPosition: "center bottom 0px" // Change this '0px' to move the lines up or down
+          }}
+        />
         <div className="max-w-4xl text-center relative z-10 px-4">
-          <h1 className={title({ size: "lg", class: "mb-4" })}>
+          <h1 className="text-4xl lg:text-6xl font-semibold tracking-tight mb-4 text-foreground">
             Building AI Systems&#160;
           </h1>
 
           <h1
-            className={title({
-              size: "lg",
-              class:
-                "mb-6 inline-flex items-center justify-center gap-2 flex-nowrap",
-            })}
+            className="text-4xl lg:text-6xl font-semibold tracking-tight mb-6 inline-flex items-center justify-center gap-2 flex-nowrap text-foreground"
           >
             <span>That&#160;</span>
             <span className="inline-block w-[150px] text-left">
@@ -65,61 +78,6 @@ export default function IndexPage() {
               />
             </span>
           </h1>
-
-          <p className="mt-6 text-default-500 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-            Pioneering NLP, Computer Vision & low-resource language solutions —
-            from research to production.
-          </p>
-        </div>
-
-        {showArrow && (
-          <button
-            aria-label="Scroll to content"
-            className="absolute bottom-12 animate-bounce cursor-pointer border-none bg-transparent transition-opacity duration-300 z-10"
-            onClick={scrollToContent}
-          >
-            <svg
-              className="w-8 h-8 text-primary"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-        )}
-      </section>
-
-      {/* Gradient separator */}
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-
-      <section
-        className="relative flex flex-col items-center justify-center gap-8 z-10"
-        id="content"
-        style={{ height: "calc(100vh - 64px)" }}
-      >
-        <div className="max-w-4xl text-center">
-          <p className={subtitle({ class: "mx-auto max-w-2xl" })}>
-            Specializing in Natural Language Processing, Computer Vision, and
-            breakthrough solutions for low-resource languages.
-          </p>
-        </div>
-
-        <div className="flex gap-4 mt-4">
-          <Button
-            as={NextLink}
-            className="hover:border-primary transition-colors"
-            href="/about"
-            size="lg"
-            variant="bordered"
-          >
-            Learn More
-          </Button>
         </div>
       </section>
     </DefaultLayout>
