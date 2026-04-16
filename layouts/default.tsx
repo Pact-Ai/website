@@ -21,7 +21,7 @@ export default function DefaultLayout({
         {children}
       </main>
 
-      <footer className="w-full border-t border-white/[0.06] mt-24">
+      <footer className="w-full border-t border-black/[0.06] mt-24">
         {/* Main footer body */}
         <div className="max-w-7xl mx-auto px-6 pt-16 pb-12">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-8">
@@ -41,7 +41,7 @@ export default function DefaultLayout({
                 <Link
                   isExternal
                   aria-label="GitHub"
-                  className="text-default-500 hover:text-foreground transition-colors"
+                  className="text-default-400 hover:text-foreground transition-colors"
                   href={siteConfig.links.github}
                 >
                   <GithubIcon size={18} />
@@ -49,7 +49,7 @@ export default function DefaultLayout({
                 <Link
                   isExternal
                   aria-label="Discord"
-                  className="text-default-500 hover:text-foreground transition-colors"
+                  className="text-default-400 hover:text-foreground transition-colors"
                   href={siteConfig.links.discord}
                 >
                   <DiscordIcon size={18} />
@@ -57,12 +57,12 @@ export default function DefaultLayout({
                 <Link
                   isExternal
                   aria-label="HuggingFace"
-                  className="text-default-500 hover:text-foreground transition-colors"
+                  className="text-default-400 hover:text-foreground transition-colors"
                   href={siteConfig.links.huggingface}
                 >
                   <img
                     alt="HuggingFace"
-                    className="w-[18px] h-[18px] opacity-60 hover:opacity-100 transition-opacity"
+                    className="w-[18px] h-[18px] opacity-40 hover:opacity-100 transition-opacity"
                     src="/hf-logo.svg"
                   />
                 </Link>
@@ -71,7 +71,7 @@ export default function DefaultLayout({
 
             {/* Products column */}
             <div className="flex flex-col gap-4">
-              <p className="text-xs font-semibold uppercase tracking-widest text-default-400">
+              <p className="text-[11px] font-semibold uppercase tracking-widest text-default-400">
                 Products
               </p>
               <div className="flex flex-col gap-3">
@@ -82,7 +82,7 @@ export default function DefaultLayout({
                 >
                   NoteStudio
                 </Link>
-                <span className="text-sm text-default-500 cursor-default">
+                <span className="text-sm text-default-400 cursor-default">
                   The Jerome API
                 </span>
                 <NextLink
@@ -96,7 +96,7 @@ export default function DefaultLayout({
 
             {/* Company column */}
             <div className="flex flex-col gap-4">
-              <p className="text-xs font-semibold uppercase tracking-widest text-default-400">
+              <p className="text-[11px] font-semibold uppercase tracking-widest text-default-400">
                 Company
               </p>
               <div className="flex flex-col gap-3">
@@ -132,13 +132,13 @@ export default function DefaultLayout({
         </div>
 
         {/* Legal strip */}
-        <div className="border-t border-white/[0.06]">
+        <div className="border-t border-black/[0.06]">
           <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-3">
-            <p className="text-xs text-default-500">
+            <p className="text-xs text-default-400">
               © {new Date().getFullYear()} {siteConfig.name}. All rights
               reserved.
             </p>
-            <p className="text-xs text-default-500 italic">
+            <p className="text-xs text-default-400 italic">
               ...stay tuned for the future...
             </p>
           </div>

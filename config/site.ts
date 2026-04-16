@@ -34,8 +34,8 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: "https://github.com/Pact-Ai",
-    huggingface: "https://huggingface.co/Pact-Ai",
-    discord: "https://discord.gg/pact-ai",
+    github: "https://github.com/Glim",
+    huggingface: "https://huggingface.co/Glim",
+    discord: "https://discord.gg/glim",
   },
 };

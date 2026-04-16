@@ -15,7 +15,7 @@ const experiments = [
     image: "/t5_igbo.png",
     tags: ["NLP", "NMT", "Low-Resource"],
     status: "Published",
-    link: "https://huggingface.co/Pact-Ai/t5-small_igbo-en"
+    link: "https://huggingface.co/Glim/t5-small_igbo-en"
   }
 
   // {
@@ -49,7 +49,7 @@ export default function ExperimentsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mx-auto px-4">
           {experiments.map((exp, index) => (
-            <Card key={index} className="bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-300 group">
+            <Card key={index} className="bg-white border border-black/[0.08] hover:border-black/[0.16] hover:shadow-[0_4px_32px_rgba(0,0,0,0.06)] transition-all duration-300 group">
               <CardHeader className="p-0 overflow-hidden aspect-video">
                 <Image
                   alt={exp.title}
@@ -60,32 +60,32 @@ export default function ExperimentsPage() {
               </CardHeader>
               <CardBody className="p-5 flex flex-col gap-3">
                 <div className="flex justify-between items-start gap-2">
-                  <h3 className="text-xl font-bold">{exp.title}</h3>
-                  <Chip size="sm" variant="flat" color={exp.status === "Published" ? "success" : "warning"} className="px-3">
+                  <h3 className="text-lg font-semibold text-foreground">{exp.title}</h3>
+                  <Chip size="sm" variant="flat" className="px-3 bg-black/[0.04] text-default-600">
                     {exp.status}
                   </Chip>
                 </div>
                 <p className="text-default-500 text-sm line-clamp-3">
                   {exp.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mt-2 ">
+                <div className="flex flex-wrap gap-2 mt-2">
                   {exp.tags.map(tag => (
-                    <Chip key={tag} size="sm" variant="bordered" className="px-2">
+                    <Chip key={tag} size="sm" variant="bordered" className="px-2 border-black/[0.08] text-default-500">
                       {tag}
                     </Chip>
                   ))}
                 </div>
               </CardBody>
-              <Divider className="bg-white/5" />
+              <Divider className="bg-black/[0.06]" />
               <CardFooter className="p-4">
                 <Button
                   as={NextLink}
-                  className="w-full font-medium"
+                  className="w-full font-medium bg-primary text-white hover:opacity-90 transition-opacity"
                   href={exp.link}
                   rel={exp.link.startsWith("http") ? "noopener noreferrer" : undefined}
                   size="sm"
                   target={exp.link.startsWith("http") ? "_blank" : undefined}
-                  variant="flat"
+                  radius="full"
                 >
                   {exp.status === "Published" ? "View Publication" : "Learn More"}
                 </Button>

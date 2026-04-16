@@ -10,19 +10,32 @@ export default function IndexPage() {
       <section
         className="relative flex items-center justify-center overflow-hidden"
         id="hero"
-        style={{ height: "calc(100vh - 64px)" }}
+        style={{
+          height: "calc(100vh - 64px)",
+          width: "100vw",
+          position: "relative",
+          left: "50%",
+          right: "50%",
+          marginLeft: "-50vw",
+          marginRight: "-50vw",
+        }}
       >
+        {/* Ultra-minimalist abstract accent at the bottom of the hero */}
+        <div
+          className="absolute inset-0 bg-no-repeat opacity-70"
+          style={{
+            backgroundImage: "url('/hero-accent-minimal.png')",
+            backgroundSize: "100% auto",
+            backgroundPosition: "center bottom 0px" // Change this '0px' to move the lines up or down
+          }}
+        />
         <div className="max-w-4xl text-center relative z-10 px-4">
-          <h1 className={title({ size: "lg", class: "mb-4" })}>
+          <h1 className="text-4xl lg:text-6xl font-semibold tracking-tight mb-4 text-foreground">
             Building AI Systems&#160;
           </h1>
 
           <h1
-            className={title({
-              size: "lg",
-              class:
-                "mb-6 inline-flex items-center justify-center gap-2 flex-nowrap",
-            })}
+            className="text-4xl lg:text-6xl font-semibold tracking-tight mb-6 inline-flex items-center justify-center gap-2 flex-nowrap text-foreground"
           >
             <span>That&#160;</span>
             <span className="inline-block w-[150px] text-left">

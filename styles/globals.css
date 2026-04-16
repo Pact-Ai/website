@@ -7,10 +7,21 @@
 @theme {
     --font-sans: "Inter", sans-serif;
     --font-mono: "Fira Code", monospace;
+    --font-display: "Instrument Serif", serif;
 }
 
-/* Subtle dot-grid background for a techy feel */
+/* Cursor.com-inspired dark mode */
 body {
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 24px 24px;
+    background-color: #ffffff;
+    background-image: none;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+    background-color: rgba(0, 149, 255, 0.2);
 }
