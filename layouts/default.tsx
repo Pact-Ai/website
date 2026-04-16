@@ -94,35 +94,6 @@ export default function DefaultLayout({
               </div>
             </div>
 
-            {/* Research column */}
-            <div className="flex flex-col gap-4">
-              <p className="text-xs font-semibold uppercase tracking-widest text-default-400">
-                Research
-              </p>
-              <div className="flex flex-col gap-3">
-                <Link
-                  isExternal
-                  className="text-sm text-default-500 hover:text-foreground transition-colors w-fit"
-                  href={siteConfig.links.huggingface}
-                >
-                  HuggingFace
-                </Link>
-                <Link
-                  isExternal
-                  className="text-sm text-default-500 hover:text-foreground transition-colors w-fit"
-                  href={siteConfig.links.github}
-                >
-                  Open Source
-                </Link>
-                <NextLink
-                  className="text-sm text-default-500 hover:text-foreground transition-colors w-fit"
-                  href="/blog"
-                >
-                  Blog
-                </NextLink>
-              </div>
-            </div>
-
             {/* Company column */}
             <div className="flex flex-col gap-4">
               <p className="text-xs font-semibold uppercase tracking-widest text-default-400">
@@ -149,6 +120,12 @@ export default function DefaultLayout({
                 >
                   Contribute
                 </Link>
+                <NextLink
+                  className="text-sm text-default-500 hover:text-foreground transition-colors w-fit"
+                  href="/blog"
+                >
+                  Blog
+                </NextLink>
               </div>
             </div>
           </div>

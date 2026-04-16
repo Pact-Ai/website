@@ -28,6 +28,7 @@ export const Navbar = () => {
 
   //Hooks
   const [scrolled, setScrolled] = useState(false);
+  const [isProductMenuOpen, setIsProductMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -72,8 +73,15 @@ export const Navbar = () => {
 
               if (item.label === "Product" || item.label === "Products") {
                 return (
-                  <NavbarItem key="product-navbar-item">
-                    <Dropdown className="bg-background/90 backdrop-blur-md border border-white/10 shadow-lg shadow-black/30">
+                  <NavbarItem 
+                    key="product-navbar-item"
+                    onMouseEnter={() => setIsProductMenuOpen(true)}
+                    onMouseLeave={() => setIsProductMenuOpen(false)}
+                  >
+                    <Dropdown 
+                      isOpen={isProductMenuOpen}
+                      className="bg-background/90 backdrop-blur-md border border-white/10 shadow-lg shadow-black/30"
+                    >
                       <DropdownTrigger>
                         <Button
                           disableRipple

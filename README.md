@@ -1,6 +1,6 @@
-# Pact-Ai Website
+# Glim Website
 
-The official website for **Pact-Ai** — building AI systems that help, matter, and scale. Specializing in Natural Language Processing, Computer Vision, and breakthrough solutions for low-resource languages.
+The official website for **Glim** — building AI systems that help, matter, and scale. Specializing in Natural Language Processing, Computer Vision, and breakthrough solutions for low-resource languages.
 
 ## Tech Stack
 

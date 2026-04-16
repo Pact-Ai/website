@@ -6,6 +6,7 @@ import { Button } from "@heroui/button";
 import NextLink from "next/link";
 import { Divider } from "@heroui/divider";
 import { Chip } from "@heroui/chip";
+import LightRays from "@/components/LightRays";
 
 const experiments = [
   {
@@ -94,10 +95,23 @@ export default function ExperimentsPage() {
         </div>
       </section>
 
-      {/* Aesthetic background element */}
-      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10 pointer-events-none opacity-20">
-        <div className="absolute top-[20%] left-[10%] w-[40%] h-[40%] bg-primary/20 blur-[120px] rounded-full animate-pulse" />
-        <div className="absolute bottom-[20%] right-[10%] w-[35%] h-[35%] bg-blue-500/10 blur-[120px] rounded-full animate-pulse delay-700" />
+      {/* Aesthetic LightRays background */}
+      <div className="fixed inset-0 w-full h-full -z-10 pointer-events-none mix-blend-screen opacity-60">
+        <LightRays
+          className="custom-rays"
+          distortion={0}
+          fadeDistance={1}
+          followMouse={true}
+          lightSpread={0.5}
+          mouseInfluence={0.1}
+          noiseAmount={0}
+          pulsating={false}
+          rayLength={3}
+          raysColor="#ffffff"
+          raysOrigin="top-center"
+          raysSpeed={1}
+          saturation={1}
+        />
       </div>
     </DefaultLayout>
   );

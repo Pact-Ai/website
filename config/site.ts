@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Pact-Ai",
-  organization: "Pact-Ai",
+  name: "Glim",
+  organization: "Glim",
   description:
     "Building AI products and systems that help. Specializing in NLP, Computer Vision, and low-resource languages.",
   navItems: [
