@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "@heroui/link";
 import NextLink from "next/link";
+import Image from "next/image";
 
 import { Head } from "./head";
 
 import { Navbar } from "@/components/navbar";
 import { GithubIcon, DiscordIcon, Logo } from "@/components/icons";
 import { siteConfig } from "@/config/site";
+import LightRays from "@/components/LightRays";
 
 export default function DefaultLayout({
   children,
@@ -15,6 +17,24 @@ export default function DefaultLayout({
 }) {
   return (
     <div className="relative flex flex-col min-h-screen overflow-x-hidden">
+      {/* Global Background LightRays */}
+      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none mix-blend-screen opacity-80">
+        <LightRays
+          className="custom-rays"
+          distortion={0}
+          fadeDistance={1}
+          followMouse={false}
+          lightSpread={0.5}
+          mouseInfluence={0.1}
+          noiseAmount={0}
+          pulsating={false}
+          rayLength={3}
+          raysColor="#ffffff"
+          raysOrigin="top-center"
+          raysSpeed={1}
+          saturation={1}
+        />
+      </div>
       <Head />
       <Navbar />
       <main className="container mx-auto max-w-7xl px-6 flex-grow pt-16 relative z-10">
@@ -60,10 +80,12 @@ export default function DefaultLayout({
                   className="text-default-400 hover:text-foreground transition-colors"
                   href={siteConfig.links.huggingface}
                 >
-                  <img
+                  <Image
                     alt="HuggingFace"
-                    className="w-[18px] h-[18px] opacity-40 hover:opacity-100 transition-opacity"
+                    className="opacity-40 hover:opacity-100 transition-opacity"
+                    height={18}
                     src="/hf-logo.svg"
+                    width={18}
                   />
                 </Link>
               </div>

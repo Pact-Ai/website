@@ -22,5 +22,14 @@ export default heroui({
         },
       },
     },
+    dark: {
+      colors: {
+        primary: {
+          DEFAULT: "#f97316",
+          foreground: "#ffffff",
+        },
+        focus: "#f97316",
+      },
+    },
   },
 });

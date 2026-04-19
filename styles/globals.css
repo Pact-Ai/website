@@ -12,8 +12,10 @@
 
 /* Cursor.com-inspired dark mode */
 body {
-    background-color: #ffffff;
-    background-image: none;
+    background-color: #050505;
+    color: #e5e5e5;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+    background-size: 32px 32px;
 }
 
 /* Smooth scrolling */
@@ -23,5 +25,5 @@ html {
 
 /* Selection color */
 ::selection {
-    background-color: rgba(0, 149, 255, 0.2);
+    background-color: rgba(249, 115, 22, 0.3);
 }

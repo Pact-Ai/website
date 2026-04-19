@@ -16,6 +16,7 @@ import {
 import { Button } from "@heroui/button";
 import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
+import Image from "next/image";
 import clsx from "clsx";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
@@ -73,14 +74,14 @@ export const Navbar = () => {
 
               if (item.label === "Product" || item.label === "Products") {
                 return (
-                  <NavbarItem 
+                  <NavbarItem
                     key="product-navbar-item"
                     onMouseEnter={() => setIsProductMenuOpen(true)}
                     onMouseLeave={() => setIsProductMenuOpen(false)}
                   >
-                    <Dropdown 
-                      isOpen={isProductMenuOpen}
+                    <Dropdown
                       className="bg-background/90 backdrop-blur-md border border-white/10 shadow-lg shadow-black/30"
+                      isOpen={isProductMenuOpen}
                     >
                       <DropdownTrigger>
                         <Button
@@ -116,10 +117,12 @@ export const Navbar = () => {
                           href="https://pagestudio1.framer.website/"
                           rel="noopener noreferrer"
                           startContent={
-                            <img
+                            <Image
                               alt="NoteStudio"
-                              className="w-16 h-16 rounded-md object-cover border border-white/10"
+                              className="rounded-md object-cover border border-white/10"
+                              height={64}
                               src="/pagestudio_pic.jpg"
+                              width={64}
                             />
                           }
                           target="_blank"
@@ -135,10 +138,12 @@ export const Navbar = () => {
                           href="#"
                           rel="noopener noreferrer"
                           startContent={
-                            <img
+                            <Image
                               alt="Jerome"
-                              className="w-16 h-16 rounded-md object-cover border border-white/10"
+                              className="rounded-md object-cover border border-white/10"
+                              height={64}
                               src="/jerome.jpg"
+                              width={64}
                             />
                           }
                           target="_blank"
@@ -153,10 +158,12 @@ export const Navbar = () => {
                           description="A machine learning research space"
                           href="/experiments"
                           startContent={
-                            <img
+                            <Image
                               alt="Playground"
-                              className="w-16 h-16 rounded-md object-cover border border-white/10"
+                              className="rounded-md object-cover border border-white/10"
+                              height={64}
                               src="/t5_igbo.png"
+                              width={64}
                             />
                           }
                         >

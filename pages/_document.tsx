@@ -5,11 +5,11 @@ import { fontSans, fontDisplay } from "@/config/fonts";
 
 export default function Document() {
   return (
-    <Html className="light" lang="en">
+    <Html className="dark" lang="en">
       <Head />
       <body
         className={clsx(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen font-sans antialiased",
           fontSans.variable,
           fontDisplay.variable,
         )}
