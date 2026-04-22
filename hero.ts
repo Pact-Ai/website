@@ -25,7 +25,7 @@ export default heroui({
     dark: {
       colors: {
         primary: {
-          DEFAULT: "#f97316",
+          DEFAULT: "#969696",
           foreground: "#ffffff",
         },
         focus: "#f97316",
