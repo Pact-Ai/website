@@ -29,7 +29,7 @@ export default function IndexPage() {
                 animate={{ y: 0 }}
                 exit={{ y: "-120%" }}
                 initial={{ y: "100%" }}
-                mainClassName="text-primary inline-block"
+                mainClassName="text-black inline-block px-3 py-1 border border-white bg-primary"
                 rotationInterval={3500}
                 splitLevelClassName="overflow-hidden"
                 staggerDuration={0.025}
