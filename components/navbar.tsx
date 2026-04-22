@@ -214,7 +214,7 @@ export const Navbar = () => {
                         linkStyles({ color: "foreground" }),
                         "w-full pl-3 font-medium",
                       )}
-                      href="https://pagestudio1.framer.website/"
+                      href="https://waitlist.notestudio.net"
                       rel="noopener noreferrer"
                       target="_blank"
                     >
