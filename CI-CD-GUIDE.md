@@ -78,7 +78,7 @@ git add .
 git commit -m "Initial commit"
 
 # Create a repo on github.com, then:
-git remote add origin https://github.com/yourusername/pact-website.git
+git remote add origin https://github.com/yourusername/glim-website.git
 git push -u origin main
 ```
 
@@ -86,7 +86,7 @@ git push -u origin main
 
 1. Go to [vercel.com](https://vercel.com) and sign up with GitHub
 2. Click "Add New Project"
-3. Select your `pact-website` repository
+3. Select your `glim-website` repository
 4. Click "Deploy"
 
 **That's it!** You now have full CI/CD. Here's what happens automatically:
@@ -270,7 +270,7 @@ git push
 - Wait 2 minutes
 
 **Step 4:** Visit your live website!
-- Vercel gives you a URL like `pact-website.vercel.app`
+- Vercel gives you a URL like `glim-website.vercel.app`
 - Share it with friends!
 
 ---
@@ -337,7 +337,7 @@ The file will look like this:
 
 **Step-by-step:**
 
-1. **Go to your GitHub repository** → `https://github.com/yourusername/pact-website`
+1. **Go to your GitHub repository** → `https://github.com/yourusername/glim-website`
 
 2. **Click "Settings"** tab (at the top)
 

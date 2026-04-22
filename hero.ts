@@ -2,24 +2,34 @@ import { heroui } from "@heroui/theme";
 
 export default heroui({
   themes: {
+    light: {
+      colors: {
+        background: "#ffffff",
+        foreground: "#111111",
+        primary: {
+          DEFAULT: "#2f5a08ff",
+          foreground: "#ffffff",
+        },
+        focus: "#70AAB5",
+        default: {
+          100: "#f5f5f5",
+          200: "#ebebeb",
+          300: "#d6d6d6",
+          400: "#a3a3a3",
+          500: "#737373",
+          600: "#525252",
+          700: "#404040",
+        },
+      },
+    },
     dark: {
       colors: {
-        background: "#0a0a0f",
-        foreground: "#e8e8ec",
         primary: {
-          DEFAULT: "#c45a2d",
-          foreground: "#faf5f0",
+          DEFAULT: "#dde4eb",
+          foreground: "#ffffff",
         },
-        focus: "#e07040",
-        default: {
-          100: "#1a1a24",
-          200: "#25253a",
-          300: "#35354a",
-          400: "#6b6b80",
-          500: "#8a8a9a",
-          600: "#a0a0b0",
-          700: "#c0c0cc",
-        },
+        
+        focus: "#70AAB5",
       },
     },
   },

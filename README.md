@@ -1,6 +1,6 @@
-# Pact-Ai Website
+# Glim Website
 
-The official website for **Pact-Ai** — building AI systems that help, matter, and scale. Specializing in Natural Language Processing, Computer Vision, and breakthrough solutions for low-resource languages.
+The official website for **Glim** — building AI systems that help, matter, and scale. Specializing in Natural Language Processing, Computer Vision, and breakthrough solutions for low-resource languages.
 
 ## Tech Stack
 
@@ -36,9 +36,9 @@ Opens the site at [http://localhost:3000](http://localhost:3000) with Turbopack 
 
 ## Links
 
-- [GitHub](https://github.com/Pact-Ai)
-- [HuggingFace](https://huggingface.co/Pact-Ai)
-- [Discord](https://discord.gg/pact-ai)
+- [GitHub](https://github.com/Glim)
+- [HuggingFace](https://huggingface.co/Glim)
+- [Discord](https://discord.gg/glim)
 
 ---
 

@@ -1,16 +1,17 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import clsx from "clsx";
 
-import { fontSans } from "@/config/fonts";
+import { fontSans, fontDisplay } from "@/config/fonts";
 
 export default function Document() {
   return (
-    <Html lang="en" className="dark">
+    <Html className="dark" lang="en">
       <Head />
       <body
         className={clsx(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen font-sans antialiased",
           fontSans.variable,
+          fontDisplay.variable,
         )}
       >
         <Main />
