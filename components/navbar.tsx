@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
@@ -20,6 +22,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import { BracketsCurlyIcon, CubeIcon, PencilLineIcon } from "@phosphor-icons/react";
 
 import { siteConfig } from "@/config/site";
 import { Logo, ChevronDownIcon } from "@/components/icons";
@@ -59,7 +62,7 @@ export const Navbar = () => {
       >
         <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
           <NavbarMenuToggle className="lg:hidden" />
-          <NavbarBrand className="gap-3 max-w-fit absolute left-1/2 -translate-x-1/2">
+          <NavbarBrand className="gap-3 max-w-fit absolute left-1/2 -translate-x-1/2 lg:static lg:translate-0">
             <NextLink
               className="flex justify-start items-center gap-2"
               href="/"
@@ -125,13 +128,9 @@ export const Navbar = () => {
                           href="https://pagestudio1.framer.website/"
                           rel="noopener noreferrer"
                           startContent={
-                            <Image
-                              alt="NoteStudio"
-                              className="rounded-md object-cover border border-white/10"
-                              height={64}
-                              src="/pagestudio_pic.jpg"
-                              width={64}
-                            />
+                            <div className="p-4 rounded-md border border-white/10 bg-white text-black">
+                              <PencilLineIcon size={32} weight="duotone" />
+                            </div>
                           }
                           target="_blank"
                         >
@@ -149,13 +148,9 @@ export const Navbar = () => {
                           href="#"
                           rel="noopener noreferrer"
                           startContent={
-                            <Image
-                              alt="Jerome"
-                              className="rounded-md object-cover border border-white/10"
-                              height={64}
-                              src="/jerome.jpg"
-                              width={64}
-                            />
+                            <div className="p-4 rounded-md border border-white/10 bg-white text-black">
+                              <BracketsCurlyIcon size={32} weight="duotone" />
+                            </div>
                           }
                           target="_blank"
                         >
@@ -172,13 +167,9 @@ export const Navbar = () => {
                           description="A machine learning research space"
                           href="/experiments"
                           startContent={
-                            <Image
-                              alt="Mesh"
-                              className="rounded-md object-cover border border-white/10 aspect-[9/14]"
-                              height={64}
-                              src="/t5_igbo.png"
-                              width={64}
-                            />
+                            <div className="p-4 rounded-md border border-white/10 bg-white text-black">
+                              <CubeIcon size={32} weight="duotone" />
+                            </div>
                           }
                         >
                           <span className="font-bold text-base mb-1 block">
