@@ -83,7 +83,8 @@ export const Navbar = () => {
                     <Dropdown
                       className={clsx(
                         "bg-transparent text-white backdrop-blur-xs border border-white/10 shadow-lg shadow-black/30",
-                        scrolled && "bg-white text-black",
+                        scrolled &&
+                          "bg-white/10 border border-white/10 text-black",
                       )}
                       isOpen={isProductMenuOpen}
                     >
@@ -117,8 +118,8 @@ export const Navbar = () => {
                         <DropdownItem
                           key="notestudio"
                           className={clsx(
-                            "transition-colors hover:bg-white/5! active:bg-white/10 flex items-end",
-                            scrolled && "hover:bg-black/10! hover:text-black!",
+                            "transition-colors hover:bg-white/5! active:bg-white/10 flex items-end text-white",
+                            scrolled && "hover:bg-white/70! hover:text-black!",
                           )}
                           description="AI platform for education. Study, understand, and create."
                           href="https://pagestudio1.framer.website/"
@@ -141,8 +142,8 @@ export const Navbar = () => {
                         <DropdownItem
                           key="jerome"
                           className={clsx(
-                            "transition-colors hover:bg-white/5! active:bg-white/10 flex items-end",
-                            scrolled && "hover:bg-black/10! hover:text-black!",
+                            "transition-colors hover:bg-white/5! active:bg-white/10 flex items-end text-white",
+                            scrolled && "hover:bg-white/70! hover:text-black!",
                           )}
                           description="Language translation API. Affordable service for developers."
                           href="#"
@@ -165,9 +166,10 @@ export const Navbar = () => {
                         <DropdownItem
                           key="mesh"
                           className={clsx(
-                            "transition-colors hover:bg-white/5! active:bg-white/10 flex items-end",
-                            scrolled && "hover:bg-black/10! hover:text-black!",
-                          )}                          description="A machine learning research space"
+                            "transition-colors hover:bg-white/5! active:bg-white/10 flex items-end text-white",
+                            scrolled && "hover:bg-white/70! hover:text-black!",
+                          )}
+                          description="A machine learning research space"
                           href="/experiments"
                           startContent={
                             <Image
