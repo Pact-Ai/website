@@ -28,7 +28,7 @@ export default heroui({
           DEFAULT: "#dde4eb",
           foreground: "#ffffff",
         },
-        
+
         focus: "#70AAB5",
       },
     },

@@ -53,13 +53,13 @@ export const Navbar = () => {
           "transition-all duration-500 ease-in-out px-4 sm:px-6",
           scrolled
             ? "bg-white/5 backdrop-blur-xl border border-white/10 rounded-full shadow-lg shadow-black/30"
-            : "bg-white/[0.02] backdrop-blur-md border-b border-white/[0.06] rounded-none shadow-none",
+            : "rounded-none shadow-none bg-transparent backdrop-blur-none border-b border-white/0",
         )}
         maxWidth="full"
       >
         <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
           <NavbarMenuToggle className="lg:hidden" />
-          <NavbarBrand className="gap-3 max-w-fit">
+          <NavbarBrand className="gap-3 max-w-fit absolute left-1/2 -translate-x-1/2">
             <NextLink
               className="flex justify-start items-center gap-2"
               href="/"
@@ -76,18 +76,22 @@ export const Navbar = () => {
                 return (
                   <NavbarItem
                     key="product-navbar-item"
+                    className="flex items-center"
                     onMouseEnter={() => setIsProductMenuOpen(true)}
                     onMouseLeave={() => setIsProductMenuOpen(false)}
                   >
                     <Dropdown
-                      className="bg-background/90 backdrop-blur-md border border-white/10 shadow-lg shadow-black/30"
+                      className={clsx(
+                        "bg-transparent text-white backdrop-blur-xs border border-white/10 shadow-lg shadow-black/30",
+                        scrolled && "bg-white text-black",
+                      )}
                       isOpen={isProductMenuOpen}
                     >
                       <DropdownTrigger>
                         <Button
                           disableRipple
                           className={clsx(
-                            "p-0 bg-transparent data-[hover=true]:bg-transparent min-w-0 font-medium text-foreground relative transition-colors text-base flex items-center gap-1 h-auto",
+                            "p-0 bg-transparent data-[hover=true]:bg-transparent min-w-0 font-medium text-foreground relative transition-colors flex uppercase text-xs tracking-wide items-center gap-1 h-auto",
                             isActive &&
                               "text-primary after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary",
                           )}
@@ -112,7 +116,10 @@ export const Navbar = () => {
                       >
                         <DropdownItem
                           key="notestudio"
-                          className="transition-colors hover:bg-white/5 active:bg-white/10"
+                          className={clsx(
+                            "transition-colors hover:bg-white/5! active:bg-white/10 flex items-end",
+                            scrolled && "hover:bg-black/10! hover:text-black!",
+                          )}
                           description="AI platform for education. Study, understand, and create."
                           href="https://pagestudio1.framer.website/"
                           rel="noopener noreferrer"
@@ -133,7 +140,10 @@ export const Navbar = () => {
                         </DropdownItem>
                         <DropdownItem
                           key="jerome"
-                          className="transition-colors hover:bg-white/5 active:bg-white/10"
+                          className={clsx(
+                            "transition-colors hover:bg-white/5! active:bg-white/10 flex items-end",
+                            scrolled && "hover:bg-black/10! hover:text-black!",
+                          )}
                           description="Language translation API. Affordable service for developers."
                           href="#"
                           rel="noopener noreferrer"
@@ -153,14 +163,16 @@ export const Navbar = () => {
                           </span>
                         </DropdownItem>
                         <DropdownItem
-                          key="playground"
-                          className="transition-colors hover:bg-white/5 active:bg-white/10"
-                          description="A machine learning research space"
+                          key="mesh"
+                          className={clsx(
+                            "transition-colors hover:bg-white/5! active:bg-white/10 flex items-end",
+                            scrolled && "hover:bg-black/10! hover:text-black!",
+                          )}                          description="A machine learning research space"
                           href="/experiments"
                           startContent={
                             <Image
-                              alt="Playground"
-                              className="rounded-md object-cover border border-white/10"
+                              alt="Mesh"
+                              className="rounded-md object-cover border border-white/10 aspect-[9/14]"
                               height={64}
                               src="/t5_igbo.png"
                               width={64}
@@ -168,7 +180,7 @@ export const Navbar = () => {
                           }
                         >
                           <span className="font-bold text-base mb-1 block">
-                            Playground
+                            Mesh
                           </span>
                         </DropdownItem>
                       </DropdownMenu>
@@ -182,7 +194,7 @@ export const Navbar = () => {
                   <NextLink
                     className={clsx(
                       linkStyles({ color: "foreground" }),
-                      "relative pb-1 transition-colors",
+                      "relative pb-1 transition-colors uppercase text-xs tracking-wide",
                       isActive &&
                         "text-primary after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary",
                     )}
@@ -197,7 +209,9 @@ export const Navbar = () => {
           </div>
         </NavbarContent>
 
-        <NavbarMenu>
+        <NavbarMenu
+          className={clsx("bg-background/5", scrolled && "top-0 py-24")}
+        >
           <div className="mx-4 mt-6 flex flex-col gap-2">
             {siteConfig.navMenuItems.map((item, index) => {
               if (item.label === "Product" || item.label === "Products") {
@@ -238,7 +252,7 @@ export const Navbar = () => {
                       )}
                       href="/experiments"
                     >
-                      Playground
+                      Mesh
                     </NextLink>
                     <div className="w-full h-px bg-white/10 my-1" />
                   </div>

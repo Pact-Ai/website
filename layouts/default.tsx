@@ -111,7 +111,7 @@ export default function DefaultLayout({
                   className="text-sm text-default-500 hover:text-foreground transition-colors w-fit"
                   href="/experiments"
                 >
-                  Playground
+                  Mesh
                 </NextLink>
               </div>
             </div>

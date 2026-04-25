@@ -42,7 +42,7 @@ export default function ExperimentsPage() {
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-12">
         <div className="max-w-4xl text-center mb-12">
-          <h1 className={title({ size: "lg" })}>The Playground</h1>
+          <h1 className={title({ size: "lg" })}>The Mesh</h1>
           <p className={subtitle({ class: "mt-4 max-w-2xl mx-auto" })}>
             A machine learning research space where we push the boundaries of
             NLP, Computer Vision, and AI infrastructure.
@@ -96,7 +96,7 @@ export default function ExperimentsPage() {
               <CardFooter className="p-4">
                 <Button
                   as={NextLink}
-                  className="w-full font-medium bg-primary text-white hover:opacity-90 transition-opacity"
+                  className="w-full font-medium bg-primary text-black hover:opacity-90 transition-opacity"
                   href={exp.link}
                   radius="full"
                   rel={
