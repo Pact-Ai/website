@@ -9,7 +9,7 @@ export default function Document() {
       <Head />
       <body
         className={clsx(
-          "min-h-screen font-sans antialiased",
+          "min-h-screen overflow-x-hidden font-sans antialiased",
           fontSans.variable,
           fontDisplay.variable,
         )}

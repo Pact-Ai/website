@@ -1,13 +1,10 @@
-import { Card, CardHeader, CardBody, CardFooter } from "@heroui/card";
-import { Image } from "@heroui/image";
+import { Card, CardHeader, CardBody } from "@heroui/card";
 import { Button } from "@heroui/button";
-import NextLink from "next/link";
-import { Divider } from "@heroui/divider";
 import { Chip } from "@heroui/chip";
+import { LightbulbFilamentIcon } from "@phosphor-icons/react";
 
 import DefaultLayout from "@/layouts/default";
 import { title, subtitle } from "@/components/primitives";
-import { LightbulbFilamentIcon } from "@phosphor-icons/react";
 
 const experiments = [
   {
@@ -28,14 +25,6 @@ const experiments = [
   //   status: "Ongoing",
   //   link: "#"
   // },
-  // {
-  //   title: "Project Jerome API",
-  //   description: "Developing robust API endpoints for multi-lingual translation services with a focus on African languages.",
-  //   image: "/jerome.jpg",
-  //   tags: ["API", "Language", "Infrastructure"],
-  //   status: "Private Beta",
-  //   link: "#"
-  // }
 ];
 
 export default function ExperimentsPage() {
@@ -49,8 +38,8 @@ export default function ExperimentsPage() {
         </p>
         <div className="mt-8">
           <Button
-            size="lg"
             className="bg-foreground font-medium p-6 text-background "
+            size="lg"
           >
             <LightbulbFilamentIcon />
             Request Spotlight

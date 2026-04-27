@@ -104,9 +104,6 @@ export default function DefaultLayout({
                 >
                   NoteStudio
                 </Link>
-                <span className="text-sm text-default-400 cursor-default">
-                  The Jerome API
-                </span>
                 <NextLink
                   className="text-sm text-default-500 hover:text-foreground transition-colors w-fit"
                   href="/experiments"

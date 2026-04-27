@@ -21,11 +21,7 @@ import NextLink from "next/link";
 import clsx from "clsx";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import {
-  BracketsCurlyIcon,
-  CubeIcon,
-  PencilLineIcon,
-} from "@phosphor-icons/react";
+import { CubeIcon, PencilLineIcon } from "@phosphor-icons/react";
 
 import { siteConfig } from "@/config/site";
 import { Logo, ChevronDownIcon } from "@/components/icons";
@@ -141,26 +137,6 @@ export const Navbar = () => {
                           </span>
                         </DropdownItem>
                         <DropdownItem
-                          key="jerome"
-                          className={clsx(
-                            "transition-colors hover:bg-white/5! active:bg-white/10 flex items-end text-white",
-                            scrolled && "hover:bg-white/70! hover:text-black!",
-                          )}
-                          description="Language translation API. Affordable service for developers."
-                          href="#"
-                          rel="noopener noreferrer"
-                          startContent={
-                            <div className="p-4 rounded-md border border-white/10 bg-white text-black">
-                              <BracketsCurlyIcon size={32} weight="duotone" />
-                            </div>
-                          }
-                          target="_blank"
-                        >
-                          <span className="font-bold text-base mb-1 block">
-                            The Jerome API
-                          </span>
-                        </DropdownItem>
-                        <DropdownItem
                           key="mesh"
                           className={clsx(
                             "transition-colors hover:bg-white/5! active:bg-white/10 flex items-end text-white",
@@ -227,17 +203,6 @@ export const Navbar = () => {
                       target="_blank"
                     >
                       NoteStudio
-                    </NextLink>
-                    <NextLink
-                      className={clsx(
-                        linkStyles({ color: "foreground" }),
-                        "w-full pl-3 font-medium",
-                      )}
-                      href="#"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      The Jerome API
                     </NextLink>
                     <NextLink
                       className={clsx(
