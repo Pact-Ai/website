@@ -18,11 +18,14 @@ import {
 import { Button } from "@heroui/button";
 import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
-import Image from "next/image";
 import clsx from "clsx";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import { BracketsCurlyIcon, CubeIcon, PencilLineIcon } from "@phosphor-icons/react";
+import {
+  BracketsCurlyIcon,
+  CubeIcon,
+  PencilLineIcon,
+} from "@phosphor-icons/react";
 
 import { siteConfig } from "@/config/site";
 import { Logo, ChevronDownIcon } from "@/components/icons";
@@ -87,7 +90,7 @@ export const Navbar = () => {
                       className={clsx(
                         "bg-transparent text-white backdrop-blur-xs border border-white/10 shadow-lg shadow-black/30",
                         scrolled &&
-                          "bg-white/10 border border-white/10 text-black",
+                          "bg-black/10 border border-white/10 text-black",
                       )}
                       isOpen={isProductMenuOpen}
                     >
@@ -95,9 +98,8 @@ export const Navbar = () => {
                         <Button
                           disableRipple
                           className={clsx(
-                            "p-0 bg-transparent data-[hover=true]:bg-transparent min-w-0 font-medium text-foreground relative transition-colors flex uppercase text-xs tracking-wide items-center gap-1 h-auto",
-                            isActive &&
-                              "text-primary after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary",
+                            "bg-transparent data-[hover=true]:bg-white/10 data-[hover=true]:scale-100 min-w-0 font-medium text-foreground relative transition-colors flex uppercase text-xs tracking-wide items-center gap-1 h-auto p-3 px-4 duration-300 rounded-md",
+                            isActive && "text-primary bg-white/10",
                           )}
                           endContent={
                             <ChevronDownIcon
@@ -187,9 +189,8 @@ export const Navbar = () => {
                   <NextLink
                     className={clsx(
                       linkStyles({ color: "foreground" }),
-                      "relative pb-1 transition-colors uppercase text-xs tracking-wide",
-                      isActive &&
-                        "text-primary after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary",
+                      "relative uppercase text-xs tracking-wide hover:bg-white/10 flex items-center px-4 py-3 transition-colors duration-300 rounded-md",
+                      isActive && "text-primary bg-white/10",
                     )}
                     color="foreground"
                     href={item.href}

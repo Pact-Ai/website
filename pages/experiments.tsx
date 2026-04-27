@@ -7,6 +7,7 @@ import { Chip } from "@heroui/chip";
 
 import DefaultLayout from "@/layouts/default";
 import { title, subtitle } from "@/components/primitives";
+import { LightbulbFilamentIcon } from "@phosphor-icons/react";
 
 const experiments = [
   {
@@ -39,83 +40,60 @@ const experiments = [
 
 export default function ExperimentsPage() {
   return (
-    <DefaultLayout>
-      <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-12">
-        <div className="max-w-4xl text-center mb-12">
-          <h1 className={title({ size: "lg" })}>The Mesh</h1>
-          <p className={subtitle({ class: "mt-4 max-w-2xl mx-auto" })}>
-            A machine learning research space where we push the boundaries of
-            NLP, Computer Vision, and AI infrastructure.
-          </p>
+    <>
+      <div className="py-48 justify-ce sm:px-32 px-12 w-screen pt-48 bg-gradient-to-br from-background/70 to-gray-900/70 -top-30 flex flex-col border-b border-b-white/10">
+        <h1 className={title({ size: "lg" })}>Our Experiments. Our Builds.</h1>
+        <p className={subtitle({ class: "mt-4 max-w-2xl" })}>
+          A machine learning research space where we push the boundaries of NLP,
+          Computer Vision, and AI infrastructure.
+        </p>
+        <div className="mt-8">
+          <Button
+            size="lg"
+            className="bg-foreground font-medium p-6 text-background "
+          >
+            <LightbulbFilamentIcon />
+            Request Spotlight
+          </Button>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mx-auto px-4">
-          {experiments.map((exp, index) => (
-            <Card
-              key={index}
-              className="bg-white/[0.03] backdrop-blur-md border border-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-black/40 transition-all duration-300 group"
-            >
-              <CardHeader className="p-0 overflow-hidden aspect-video">
-                <Image
-                  alt={exp.title}
-                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
-                  src={exp.image}
-                  width="100%"
-                />
-              </CardHeader>
-              <CardBody className="p-5 flex flex-col gap-3">
-                <div className="flex justify-between items-start gap-2">
-                  <h3 className="text-lg font-semibold text-foreground">
-                    {exp.title}
-                  </h3>
-                  <Chip
-                    className="px-3 bg-white/10 text-default-400"
-                    size="sm"
-                    variant="flat"
-                  >
-                    {exp.status}
-                  </Chip>
-                </div>
-                <p className="text-default-500 text-sm line-clamp-3">
-                  {exp.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {exp.tags.map((tag) => (
-                    <Chip
-                      key={tag}
-                      className="px-2 border-white/10 text-default-400"
-                      size="sm"
-                      variant="bordered"
-                    >
-                      {tag}
-                    </Chip>
-                  ))}
-                </div>
-              </CardBody>
-              <Divider className="bg-white/10" />
-              <CardFooter className="p-4">
-                <Button
-                  as={NextLink}
-                  className="w-full font-medium bg-primary text-black hover:opacity-90 transition-opacity"
-                  href={exp.link}
-                  radius="full"
-                  rel={
-                    exp.link.startsWith("http")
-                      ? "noopener noreferrer"
-                      : undefined
-                  }
-                  size="sm"
-                  target={exp.link.startsWith("http") ? "_blank" : undefined}
-                >
-                  {exp.status === "Published"
-                    ? "View Publication"
-                    : "Learn More"}
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
-      </section>
-    </DefaultLayout>
+      </div>
+      <DefaultLayout>
+        <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mx-auto px-4">
+            {experiments.map((exp, index) => (
+              <Card
+                key={index}
+                className="bg-white/[0.03] backdrop-blur-md border border-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-black/40 transition-all duration-300 group"
+              >
+                <CardHeader className="px-6 flex">
+                  <div className="flex justify-between w-full items-start gap-2">
+                    <h3 className="text-lg font-semibold text-foreground">
+                      {exp.title}
+                    </h3>
+                  </div>
+                </CardHeader>
+                <CardBody className="p-5 flex flex-col gap-3">
+                  <p className="text-default-500 text-sm line-clamp-3">
+                    {exp.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {exp.tags.map((tag) => (
+                      <Chip
+                        key={tag}
+                        className="px-2 border-white/10 text-default-400"
+                        size="sm"
+                        variant="bordered"
+                      >
+                        {tag}
+                      </Chip>
+                    ))}
+                  </div>
+                </CardBody>
+              </Card>
+            ))}
+          </div>
+        </section>
+      </DefaultLayout>
+    </>
   );
 }
